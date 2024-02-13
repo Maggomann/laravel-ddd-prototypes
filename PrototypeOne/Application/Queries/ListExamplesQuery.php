@@ -1,16 +1,32 @@
 <?php
 
-namespace PrototypeOne\Application\Controllers;
+namespace PrototypeOne\Application\Queries;
 
-use App\Http\Controllers\Controller;
-use Illuminate\View\View;
+use Illuminate\Contracts\Database\Query\Builder;
+use Illuminate\Http\Request;
+use PrototypeOne\Domain\Models\Example;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
-class ViewExampleListController extends Controller
+class ListExamplesQuery extends QueryBuilder
 {
-    public function __invoke(ListExamplesQuery $listExamplesQuery): View
+    public function __construct(Request $request)
     {
-        return view('example.list', [
-            'examples' => $listExamplesQuery->cursorPaginate(10),
-        ]);
+        $query = $this->baseQuery();
+
+        parent::__construct($query, $request);
+
+        $this->allowedIncludes('user');
+
+        $this->allowedFilters(
+            AllowedFilter::exact('id'),
+            AllowedFilter::partial('name'),
+        );
+    }
+
+    private function baseQuery(): Builder
+    {
+        return Example::with('user')
+            ->getQuery();
     }
 }

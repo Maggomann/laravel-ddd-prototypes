@@ -3,14 +3,16 @@
 namespace PrototypeOne\Application\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\View\View;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use PrototypeOne\Application\Queries\ListExamplesQuery;
+use PrototypeOne\Application\Resources\ExampleResource;
 
 class ViewExampleListController extends Controller
 {
-    public function __invoke(ListExamplesQuery $listExamplesQuery): View
+    public function __invoke(ListExamplesQuery $listExamplesQuery): AnonymousResourceCollection
     {
-        return view('example.list', [
-            'examples' => $listExamplesQuery->cursorPaginate(10),
-        ]);
+        $listExamples = $listExamplesQuery->execute();
+
+        return ExampleResource::collection($listExamples);
     }
 }
