@@ -2,20 +2,8 @@
 
 namespace PrototypeOne\Application\Requests;
 
-use Illuminate\Http\Request;
-
-class UpdateExampleRequest extends Request
+class EditExampleRequest extends Request
 {
-    public function authorize()
-    {
-        return true;
-    }
-
-    protected function prepareForValidation()
-    {
-        // do something
-    }
-
     public function rules()
     {
         return [
@@ -24,6 +12,11 @@ class UpdateExampleRequest extends Request
                 'string',
                 'max:255',
                 'unique:examples,name,' . $this->route('example')->id,
+            ],
+            'description' => [
+                'nullable',
+                'string',
+                'max:255',
             ],
         ];
     }

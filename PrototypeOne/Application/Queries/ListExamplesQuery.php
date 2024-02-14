@@ -2,7 +2,7 @@
 
 namespace PrototypeOne\Application\Queries;
 
-use Illuminate\Contracts\Database\Query\Builder;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use PrototypeOne\Domain\Models\Example;
 use Spatie\QueryBuilder\AllowedFilter;
@@ -26,7 +26,6 @@ class ListExamplesQuery extends QueryBuilder
 
     private function baseQuery(): Builder
     {
-        return Example::with('user')
-            ->getQuery();
+        return Example::with('user');
     }
 }

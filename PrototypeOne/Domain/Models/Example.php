@@ -24,6 +24,11 @@ class Example extends Model
      */
     protected $table = 'examples';
 
+    protected $fillable = [
+        'name',
+        'description',
+    ];
+
     protected $casts = [
         'state' => ExampleState::class,
     ];

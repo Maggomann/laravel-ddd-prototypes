@@ -11,7 +11,7 @@ class ViewExampleListController extends Controller
 {
     public function __invoke(ListExamplesQuery $listExamplesQuery): AnonymousResourceCollection
     {
-        $listExamples = $listExamplesQuery->execute();
+        $listExamples = $listExamplesQuery->get();
 
         return ExampleResource::collection($listExamples);
     }

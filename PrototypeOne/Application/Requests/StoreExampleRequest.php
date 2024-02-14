@@ -2,20 +2,8 @@
 
 namespace PrototypeOne\Application\Requests;
 
-use Illuminate\Http\Request;
-
 class StoreExampleRequest extends Request
 {
-    public function authorize()
-    {
-        return true;
-    }
-
-    protected function prepareForValidation()
-    {
-        // do something
-    }
-
     public function rules()
     {
         return [
@@ -24,6 +12,11 @@ class StoreExampleRequest extends Request
                 'string',
                 'max:255',
                 'unique:examples,name',
+            ],
+            'description' => [
+                'nullable',
+                'string',
+                'max:255',
             ],
         ];
     }
