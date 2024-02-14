@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Business\Auth\Application\Routes\ApiUserRoutes;
+use PrototypeOne\Application\Routes\PrototypeOneRoutes;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::group([], function () {
-    PrototypeOne\Application\Routes\PrototypeOneRoutes::register();
-});
+ApiUserRoutes::register();
+PrototypeOneRoutes::register();
