@@ -1,7 +1,7 @@
 <?php
 
 use Business\Auth\Application\Routes\ApiUserRoutes;
-use PrototypeOne\Application\Routes\PrototypeOneRoutes;
+use Business\Example\Application\Routes\ExampleRoutes;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,4 @@ use PrototypeOne\Application\Routes\PrototypeOneRoutes;
 */
 
 ApiUserRoutes::register();
-PrototypeOneRoutes::register();
+ExampleRoutes::register();
