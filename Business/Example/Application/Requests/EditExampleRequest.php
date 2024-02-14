@@ -11,7 +11,7 @@ class EditExampleRequest extends Request
                 'required',
                 'string',
                 'max:255',
-                'unique:examples,name,' . $this->route('example')->id,
+                'unique:examples,name,'.$this->route('example')->id,
             ],
             'description' => [
                 'nullable',

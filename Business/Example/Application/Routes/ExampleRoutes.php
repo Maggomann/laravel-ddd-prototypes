@@ -3,12 +3,12 @@
 namespace Business\Example\Application\Routes;
 
 use App\Routes\Concerns\RouteGroup;
-use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Route;
 use Business\Example\Application\Controllers\CreateExampleController;
 use Business\Example\Application\Controllers\EditExampleController;
 use Business\Example\Application\Controllers\ViewExampleController;
 use Business\Example\Application\Controllers\ViewExampleListController;
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 
 class ExampleRoutes implements RouteGroup
 {

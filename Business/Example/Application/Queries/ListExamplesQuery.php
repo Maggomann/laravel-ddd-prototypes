@@ -2,9 +2,9 @@
 
 namespace Business\Example\Application\Queries;
 
+use Business\Example\Domain\Models\Example;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Business\Example\Domain\Models\Example;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
