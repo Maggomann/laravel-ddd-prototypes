@@ -4,7 +4,6 @@ namespace Business\Auth\Application\Controllers;
 
 use App\Http\Controllers\Controller;
 use Business\Auth\Application\Resources\ApiUserResource;
-use Business\Auth\Application\Resources\AuthUserResource;
 use Illuminate\Http\Request;
 
 class ApiUserController extends Controller
