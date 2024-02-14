@@ -7,33 +7,54 @@ use Illuminate\Validation\UnauthorizedException;
 
 class ApiLoginUserAction
 {
-    public function execute(ApiAuthUserDataTransferObject $apiAuthUserDataTransferObject): ?ApiAuthUserDataTransferObject
+    /**
+     * @throws UnauthorizedException
+     */
+    public function execute(ApiAuthUserDataTransferObject $apiAuthUserDataTransferObject): ApiAuthUserDataTransferObject
     {
-        $this->ensureUserIsAttemptedToLogin($apiAuthUserDataTransferObject);
+        $this->ensureThatTheUserLogsInSuccessfully($apiAuthUserDataTransferObject);
 
-        $user = request()->user();
+        $apiAuthUserDataTransferObject->id = request()->user()->id;
+        $apiAuthUserDataTransferObject->password = null;
+        $apiAuthUserDataTransferObject->token = request()->user()->createToken('authToken')->plainTextToken;
 
-        if ($user->exists) {
-            $apiAuthUserDataTransferObject->id = $user->id;
-            $apiAuthUserDataTransferObject->password = null;
-            $apiAuthUserDataTransferObject->token = $user->createToken('authToken')->plainTextToken;
-
-            return $apiAuthUserDataTransferObject;
-        }
-
-        return null;
+        return $apiAuthUserDataTransferObject;
     }
 
     /**
      * @throws UnauthorizedException
      */
-    private function ensureUserIsAttemptedToLogin(ApiAuthUserDataTransferObject $apiAuthUserDataTransferObject): void
+    private function ensureThatTheUserLogsInSuccessfully(
+        ApiAuthUserDataTransferObject $apiAuthUserDataTransferObject
+    ): void {
+        $this->validateCredentials($apiAuthUserDataTransferObject);
+        $this->ensureUserExists();
+    }
+
+    /**
+     * @throws UnauthorizedException
+     */
+    private function ensureUserExists(): void
     {
-        auth()->attempt([
+        throw_unless(
+            request()->user(),
+            new UnauthorizedException('User not found')
+        );
+    }
+
+    /**
+     * @throws UnauthorizedException
+     */
+    private function validateCredentials(ApiAuthUserDataTransferObject $apiAuthUserDataTransferObject): void
+    {
+        $credentials = [
             'email' => $apiAuthUserDataTransferObject->email,
             'password' => $apiAuthUserDataTransferObject->password,
-        ]);
+        ];
 
-        throw_if(! auth()->check(), new UnauthorizedException('Invalid credentials'));
+        throw_unless(
+            auth()->attempt($credentials),
+            new UnauthorizedException('Invalid credentials')
+        );
     }
 }

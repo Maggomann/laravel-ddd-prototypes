@@ -3,17 +3,13 @@
 namespace Business\Auth\Application\Controllers;
 
 use App\Http\Controllers\Controller;
+use Business\Auth\Domain\Actions\ApiLogoutUserAction;
 
 class ApiUserLogoutController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
     public function __invoke()
     {
-        auth()->user()->tokens->each(function ($token, $key) {
-            $token->delete();
-        });
+        app(ApiLogoutUserAction::class)->execute(request()->user());
 
         return response()->json(['message' => 'Logged out'], 200);
     }

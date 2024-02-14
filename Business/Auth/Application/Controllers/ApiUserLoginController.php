@@ -15,7 +15,7 @@ class ApiUserLoginController extends Controller
      */
     public function __invoke(ApiUserLoginRequest $request)
     {
-        $authUserData = ApiAuthUserDataTransferObject::fromLoginRequest($request->validated());
+        $authUserData = ApiAuthUserDataTransferObject::createFromLogin($request->validated());
         $authUserData = app(ApiLoginUserAction::class)->execute($authUserData);
 
         return ApiUserResource::make($authUserData);

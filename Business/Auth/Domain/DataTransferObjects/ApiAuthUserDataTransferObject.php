@@ -32,38 +32,25 @@ class ApiAuthUserDataTransferObject extends Data
             ->through(ValidatePropertiesDataPipe::class);
     }
 
-    public static function fromRegisterRequest(array $args): self
+    public static function createFromRegistration(array $requestData): self
     {
-        if (is_array($args[0] ?? null)) {
-            $args = $args[0];
-        }
+        $password = bcrypt(Arr::get($requestData, 'password'));
 
-        $password = Arr::get($args, 'password');
-        $password = bcrypt($password);
-
-        return new self(...[
-            'id' => null,
-            'name' => Arr::get($args, 'name'),
-            'email' => Arr::get($args, 'email'),
-            'password' => $password,
-            'repeat_password' => null,
-            'token' => null,
-        ]);
+        return new self(
+            id: null,
+            name: Arr::get($requestData, 'name'),
+            email: Arr::get($requestData, 'email'),
+            password: $password
+        );
     }
 
-    public static function fromLoginRequest(array $args): static
+    public static function createFromLogin(array $requestData): self
     {
-        if (is_array($args[0] ?? null)) {
-            $args = $args[0];
-        }
-
-        return new self(...[
-            'id' => null,
-            'name' => Arr::get($args, 'name'),
-            'email' => Arr::get($args, 'email'),
-            'password' => Arr::get($args, 'password'),
-            'repeat_password' => null,
-            'token' => null,
-        ]);
+        return new self(
+            id: null,
+            name: Arr::get($requestData, 'name'),
+            email: Arr::get($requestData, 'email'),
+            password: Arr::get($requestData, 'password')
+        );
     }
 }

@@ -15,7 +15,7 @@ class ApiUserRegisterController extends Controller
      */
     public function __invoke(ApiUserRegisterRequest $request)
     {
-        $authUserData = ApiAuthUserDataTransferObject::fromRegisterRequest($request->validated());
+        $authUserData = ApiAuthUserDataTransferObject::createFromRegistration($request->validated());
         $authUserData = app(ApiRegisterUserAction::class)->execute($authUserData);
 
         return ApiUserResource::make($authUserData);
