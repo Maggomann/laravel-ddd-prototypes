@@ -24,16 +24,16 @@ class ApiUserLoginRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                'string'
+                'string',
             ],
             'email' => [
                 'required',
                 'string',
-                'email'
+                'email',
             ],
             'password' => [
                 'required',
-                'string'
+                'string',
             ],
         ];
     }

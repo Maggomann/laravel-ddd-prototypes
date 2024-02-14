@@ -13,7 +13,7 @@ use Spatie\LaravelData\DataPipes\ValidatePropertiesDataPipe;
 class ApiAuthUserDataTransferObject extends Data
 {
     public function __construct(
-        public ?int $id = null,
+        public ?int $id,
         public string $name,
         public string $email,
         public ?string $password = null,
@@ -41,7 +41,7 @@ class ApiAuthUserDataTransferObject extends Data
         $password = Arr::get($args, 'password');
         $password = bcrypt($password);
 
-        return new self(... [
+        return new self(...[
             'id' => null,
             'name' => Arr::get($args, 'name'),
             'email' => Arr::get($args, 'email'),
@@ -57,7 +57,7 @@ class ApiAuthUserDataTransferObject extends Data
             $args = $args[0];
         }
 
-        return new self(... [
+        return new self(...[
             'id' => null,
             'name' => Arr::get($args, 'name'),
             'email' => Arr::get($args, 'email'),

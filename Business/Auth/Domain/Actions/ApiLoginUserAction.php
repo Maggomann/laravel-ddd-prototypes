@@ -34,6 +34,6 @@ class ApiLoginUserAction
             'password' => $apiAuthUserDataTransferObject->password,
         ]);
 
-        throw_if(!auth()->check(), new UnauthorizedException('Invalid credentials'));
+        throw_if(! auth()->check(), new UnauthorizedException('Invalid credentials'));
     }
 }
