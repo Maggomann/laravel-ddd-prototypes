@@ -3,10 +3,13 @@
 namespace Business\Auth\Domain\Actions;
 
 use Business\Auth\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
+use Business\Auth\Domain\Traits\PreparesApiAuthUserDataTransferObject;
 use Illuminate\Validation\UnauthorizedException;
 
 class ApiLoginUserAction
 {
+    use PreparesApiAuthUserDataTransferObject;
+
     /**
      * @throws UnauthorizedException
      */
@@ -14,11 +17,7 @@ class ApiLoginUserAction
     {
         $this->ensureThatTheUserLogsInSuccessfully($apiAuthUserDataTransferObject);
 
-        $apiAuthUserDataTransferObject->id = request()->user()->id;
-        $apiAuthUserDataTransferObject->password = null;
-        $apiAuthUserDataTransferObject->token = request()->user()->createToken('authToken')->plainTextToken;
-
-        return $apiAuthUserDataTransferObject;
+        return $this->prepareDataTransferObject($apiAuthUserDataTransferObject, request()->user());
     }
 
     /**
