@@ -2,10 +2,10 @@
 
 namespace Business\Auth\Application\Controllers;
 
-use Business\Auth\Application\Resources\AuthUserResource;
 use App\Http\Controllers\Controller;
-use Business\Auth\Application\Requests\ApiRegisterRequest;
-use Business\Auth\Domain\Actions\ApiRegisterAuhUserAction;
+use Business\Auth\Application\Requests\ApiUserRegisterRequest;
+use Business\Auth\Application\Resources\ApiUserResource;
+use Business\Auth\Domain\Actions\ApiRegisterUserAction;
 use Business\Auth\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
 
 class ApiUserRegisterController extends Controller
@@ -13,11 +13,11 @@ class ApiUserRegisterController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(ApiRegisterRequest $request)
+    public function __invoke(ApiUserRegisterRequest $request)
     {
         $authUserData = ApiAuthUserDataTransferObject::fromRegisterRequest($request->validated());
-        $authUserData = app(ApiRegisterAuhUserAction::class)->execute($authUserData);
+        $authUserData = app(ApiRegisterUserAction::class)->execute($authUserData);
 
-        return AuthUserResource::make($authUserData);
+        return ApiUserResource::make($authUserData);
     }
 }

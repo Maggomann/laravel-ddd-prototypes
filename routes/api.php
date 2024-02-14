@@ -13,5 +13,4 @@ use Business\Auth\Application\Routes\ApiUserRoutes;
 |
 */
 
-
 ApiUserRoutes::register();
