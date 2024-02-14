@@ -51,7 +51,7 @@ class ApiAuthUserDataTransferObject extends Data
         ]);
     }
 
-    public static function fromRegisteredUser(array $args): static
+    public static function fromLoginRequest(array $args): static
     {
         if (is_array($args[0] ?? null)) {
             $args = $args[0];
@@ -61,9 +61,9 @@ class ApiAuthUserDataTransferObject extends Data
             'id' => null,
             'name' => Arr::get($args, 'name'),
             'email' => Arr::get($args, 'email'),
-            'password' => null,
+            'password' => Arr::get($args, 'password'),
             'repeat_password' => null,
-            'token' => Arr::get($args, 'email'),
+            'token' => null,
         ]);
     }
 }

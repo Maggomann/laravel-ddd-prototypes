@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Spatie\LaravelData\Data;
 
-class AuthUserResource extends JsonResource
+class ApiUserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

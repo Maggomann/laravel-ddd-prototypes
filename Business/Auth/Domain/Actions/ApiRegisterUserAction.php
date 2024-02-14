@@ -4,9 +4,8 @@ namespace Business\Auth\Domain\Actions;
 
 use App\Models\User;
 use Business\Auth\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
-use Business\Auth\Domain\DataTransferObjects\AuthUserDataTransferObject;
 
-class ApiRegisterAuhUserAction
+class ApiRegisterUserAction
 {
     public function execute(ApiAuthUserDataTransferObject $apiAuthUserDataTransferObject): ?ApiAuthUserDataTransferObject
     {

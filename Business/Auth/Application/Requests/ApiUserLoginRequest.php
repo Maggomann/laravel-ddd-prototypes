@@ -4,7 +4,7 @@ namespace Business\Auth\Application\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ApiRegisterRequest extends FormRequest
+class ApiUserLoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,24 +24,16 @@ class ApiRegisterRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                'string',
-                'max:255',
+                'string'
             ],
             'email' => [
                 'required',
                 'string',
-                'email',
-                'max:255',
-                'unique:users',
+                'email'
             ],
             'password' => [
                 'required',
-                'string',
-                'min:8',
-            ],
-            'repeat_password' => [
-                'required',
-                'same:password',
+                'string'
             ],
         ];
     }

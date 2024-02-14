@@ -8,7 +8,7 @@ use Business\Auth\Application\Requests\ApiRegisterRequest;
 use Business\Auth\Domain\Actions\ApiRegisterAuhUserAction;
 use Business\Auth\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
 
-class ApiRegisterController extends Controller
+class ApiUserRegisterController extends Controller
 {
     /**
      * Handle the incoming request.
