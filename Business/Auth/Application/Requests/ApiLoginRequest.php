@@ -1,10 +1,10 @@
 <?php
 
-namespace Auth\Application\Requests;
+namespace Business\Auth\Application\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class ApiLoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,26 +22,17 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => [
+            'email' >= [
                 'required',
                 'string',
-                'max:255',
-            ],
-            'email' => [
-                'required',
-                'string',
-                'email',
-                'max:255',
-                'unique:users',
+                'email'
             ],
             'password' => [
                 'required',
-                'string',
-                'min:8',
+                'string'
             ],
-            'repeat_password' => [
-                'required',
-                'same:password',
+            'remember_me' => [
+                'boolean',
             ],
         ];
     }

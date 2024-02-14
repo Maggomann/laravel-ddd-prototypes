@@ -5,7 +5,7 @@ namespace Auth\Application\Controllers;
 use Auth\Application\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
 
-class LoginController extends Controller
+class ApiLoginController extends Controller
 {
     /**
      * Handle the incoming request.

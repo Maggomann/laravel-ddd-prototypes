@@ -1,7 +1,6 @@
 <?php
 
-use Auth\Application\Controllers\RegisterApiAuthUserController;
-use Illuminate\Support\Facades\Route;
+use Business\Auth\Application\Routes\ApiAuthUserRoutes;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([], function () {
-    Route::get('/auth/register', RegisterController::class);
-    // Auth\Application\Routes\ApiAuthUserRoutes::register();
-});
+
+ApiAuthUserRoutes::register();
