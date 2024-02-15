@@ -1,12 +1,12 @@
 <?php
 
-namespace Business\Auth\Application\Controllers;
+namespace Business\Auth\Api\Application\Controllers;
 
 use App\Http\Controllers\Controller;
-use Business\Auth\Application\Requests\ApiUserRegisterRequest;
-use Business\Auth\Application\Resources\ApiUserResource;
-use Business\Auth\Domain\Actions\ApiRegisterUserAction;
-use Business\Auth\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
+use Business\Auth\Api\Application\Requests\ApiUserRegisterRequest;
+use Business\Auth\Api\Application\Resources\ApiUserResource;
+use Business\Auth\Api\Domain\Actions\ApiRegisterUserAction;
+use Business\Auth\Api\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
 
 class ApiUserRegisterController extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Business\Auth\Application\Controllers;
+namespace Business\Auth\Api\Application\Controllers;
 
 use App\Http\Controllers\Controller;
-use Business\Auth\Domain\Actions\ApiLogoutUserAction;
+use Business\Auth\Api\Domain\Actions\ApiLogoutUserAction;
 
 class ApiUserLogoutController extends Controller
 {

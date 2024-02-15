@@ -1,8 +1,8 @@
 <?php
 
-namespace Business\Auth\Domain\Providers;
+namespace Business\Auth\Api\Domain\Providers;
 
-use Business\Auth\Application\Routes\ApiUserRoutes;
+use Business\Auth\Api\Application\Routes\ApiUserRoutes;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,7 +31,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
             ->middleware('api')
-            ->namespace('Business\Auth\Application\Controllers')
+            ->namespace('Business\Auth\Api\Application\Controllers')
             ->group(function () {
                 ApiUserRoutes::register();
             });

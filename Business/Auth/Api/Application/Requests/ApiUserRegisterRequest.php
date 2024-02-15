@@ -1,6 +1,6 @@
 <?php
 
-namespace Business\Auth\Application\Requests;
+namespace Business\Auth\Api\Application\Requests;
 
 class ApiUserRegisterRequest extends Request
 {

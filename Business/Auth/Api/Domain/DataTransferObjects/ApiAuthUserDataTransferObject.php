@@ -1,6 +1,6 @@
 <?php
 
-namespace Business\Auth\Domain\DataTransferObjects;
+namespace Business\Auth\Api\Domain\DataTransferObjects;
 
 use Illuminate\Support\Arr;
 use Spatie\LaravelData\Data;

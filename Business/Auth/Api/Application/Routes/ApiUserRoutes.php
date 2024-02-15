@@ -1,12 +1,12 @@
 <?php
 
-namespace Business\Auth\Application\Routes;
+namespace Business\Auth\Api\Application\Routes;
 
 use App\Routes\Concerns\RouteGroup;
-use Business\Auth\Application\Controllers\ApiUserController;
-use Business\Auth\Application\Controllers\ApiUserLoginController;
-use Business\Auth\Application\Controllers\ApiUserLogoutController;
-use Business\Auth\Application\Controllers\ApiUserRegisterController;
+use Business\Auth\Api\Application\Controllers\ApiUserController;
+use Business\Auth\Api\Application\Controllers\ApiUserLoginController;
+use Business\Auth\Api\Application\Controllers\ApiUserLogoutController;
+use Business\Auth\Api\Application\Controllers\ApiUserRegisterController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 

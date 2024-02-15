@@ -1,6 +1,6 @@
 <?php
 
-namespace Business\Auth\Domain\Actions;
+namespace Business\Auth\Api\Domain\Actions;
 
 use App\Models\User;
 

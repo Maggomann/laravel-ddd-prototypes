@@ -1,9 +1,9 @@
 <?php
 
-namespace Business\Auth\Domain\Actions;
+namespace Business\Auth\Api\Domain\Actions;
 
-use Business\Auth\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
-use Business\Auth\Domain\Traits\PreparesApiAuthUserDataTransferObject;
+use Business\Auth\Api\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
+use Business\Auth\Api\Domain\Traits\PreparesApiAuthUserDataTransferObject;
 use Illuminate\Validation\UnauthorizedException;
 
 class ApiLoginUserAction

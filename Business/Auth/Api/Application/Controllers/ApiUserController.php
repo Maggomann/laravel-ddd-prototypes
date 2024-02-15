@@ -1,9 +1,9 @@
 <?php
 
-namespace Business\Auth\Application\Controllers;
+namespace Business\Auth\Api\Application\Controllers;
 
 use App\Http\Controllers\Controller;
-use Business\Auth\Application\Resources\ApiUserResource;
+use Business\Auth\Api\Application\Resources\ApiUserResource;
 use Illuminate\Http\Request;
 
 class ApiUserController extends Controller

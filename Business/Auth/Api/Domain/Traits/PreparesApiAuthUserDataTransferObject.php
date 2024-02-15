@@ -1,9 +1,9 @@
 <?php
 
-namespace Business\Auth\Domain\Traits;
+namespace Business\Auth\Api\Domain\Traits;
 
 use App\Models\User;
-use Business\Auth\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
+use Business\Auth\Api\Domain\DataTransferObjects\ApiAuthUserDataTransferObject;
 
 trait PreparesApiAuthUserDataTransferObject
 {
