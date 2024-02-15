@@ -20,15 +20,27 @@ Please note that this project is still in the development phase. It serves as an
 - Business
     - Domainname
         - Shared
-            - Domain
             - Application
+            - docs
+            - Domain
+            - README.md
         - Subdomainname1
-            - Domain
             - Application
+            - docs
+            - Domain
+            - README.md
         - Subdomainname2
-            - Domain
             - Application
+            - docs
+            - Domain
+            - README.md
 
+- Application
+    - Controllers
+    - Queries
+    - Requests
+    - Resources
+    - Routes
 - Domain
     - Actions
     - Builders
@@ -49,12 +61,6 @@ Please note that this project is still in the development phase. It serves as an
     - States
     - Traits
     - ViewModels
-- Application
-    - Controllers
-    - Queries
-    - Requests
-    - Resources
-    - Routes
 ```
 
 ---
