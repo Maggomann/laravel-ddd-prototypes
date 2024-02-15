@@ -2,9 +2,7 @@
 
 namespace Business\Auth\Application\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class ApiUserLoginRequest extends FormRequest
+class ApiUserLoginRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

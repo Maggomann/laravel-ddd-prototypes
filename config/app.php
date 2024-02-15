@@ -172,6 +172,7 @@ return [
         /*
          * Domain Service Providers...
          */
+        Business\Auth\Domain\Providers\AuthServiceProvider::class,
         Business\Example\Domain\Providers\ExampleServiceProvider::class,
     ])->toArray(),
 

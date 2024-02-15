@@ -1,7 +1,5 @@
 <?php
 
-use Business\Auth\Application\Routes\ApiUserRoutes;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,5 +10,3 @@ use Business\Auth\Application\Routes\ApiUserRoutes;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-ApiUserRoutes::register();
