@@ -1,14 +1,10 @@
 # Laravel DDD Prototypes
 
----
-
 ## Description
 
 This project is a collection of prototypes implementing Domain Driven Design (DDD) in Laravel. Domain Driven Design is an approach to software development aimed at reducing the complexity of software systems by clearly separating domain logic from infrastructure concerns. The prototypes showcase various aspects of applying DDD in Laravel applications.
 
 Please note that this project is still in the development phase. It serves as an exploration and demonstration of DDD concepts in the Laravel development environment.
-
----
 
 ## Project Structure
 
@@ -62,8 +58,6 @@ Please note that this project is still in the development phase. It serves as an
     - Traits
     - ViewModels
 ```
-
----
 
 ## Installation
 
@@ -127,8 +121,6 @@ To register a new domain service, add the service provider to the `config/app.ph
 ])->toArray(),
 ```
 
----
-
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
@@ -149,8 +141,6 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Disclaimer
 
 This project is provided "as is," without express or implied warranties regarding the accuracy or completeness of the information contained herein. Use it at your own risk.
-
----
 
 ## Support
 
