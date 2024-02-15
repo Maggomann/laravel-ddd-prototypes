@@ -1,6 +1,6 @@
 <?php
 
-namespace Business\Example\SubExample\Shared\Domain\ValueObjects;
+namespace Business\Example\Shared\Domain\ValueObjects;
 
 class Percent
 {

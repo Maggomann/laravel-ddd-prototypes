@@ -1,6 +1,6 @@
 <?php
 
-namespace Business\Example\SubExample\Shared\Domain\Filters;
+namespace Business\Example\Shared\Domain\Filters;
 
 use Carbon\Carbon;
 

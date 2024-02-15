@@ -1,6 +1,6 @@
 <?php
 
-namespace Business\Example\SubExample\Shared\Domain\Messages;
+namespace Business\Example\Shared\Domain\Messages;
 
 use Illuminate\Notifications\Messages\MailMessage;
 

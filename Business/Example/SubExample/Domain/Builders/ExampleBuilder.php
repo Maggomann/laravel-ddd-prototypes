@@ -2,7 +2,7 @@
 
 namespace Business\Example\SubExample\Domain\Builders;
 
-use Business\Example\SubExample\Shared\Domain\Filters\DateFilter;
+use Business\Example\Shared\Domain\Filters\DateFilter;
 use Illuminate\Database\Eloquent\Builder;
 
 class ExampleBuilder extends Builder
