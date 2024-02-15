@@ -116,7 +116,7 @@ To register a new domain service, add the service provider to the `config/app.ph
     * Domain Service Providers...
     */
     Business\Auth\Api\Domain\Providers\AuthServiceProvider::class,
-    Business\Example\Domain\Providers\ExampleServiceProvider::class,
+    Business\Example\SubExample\Domain\Providers\ExampleServiceProvider::class,
     // ...
 ])->toArray(),
 ```
