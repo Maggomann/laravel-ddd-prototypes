@@ -140,7 +140,15 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Disclaimer
 
-This project is provided "as is," without express or implied warranties regarding the accuracy or completeness of the information contained herein. Use it at your own risk.
+Please note that this Laravel project is not officially operated by Laravel and does not provide any support or warranty from the Laravel team. The use of this project is at your own risk.
+
+This project represents unofficial extensions for Laravel and is maintained by an independent community of developers. We strive to maintain compatibility with the current versions of Laravel, but we cannot guarantee that the project will function flawlessly or be compatible with future versions of Laravel.
+
+We recommend users to create backups of their projects and thoroughly test them before using this project. If you have any questions, issues, or suggestions, we are available to assist you. However, please note that we cannot provide official support for this project.
+
+We would like to emphasize that Laravel is a separate developer community independent of this project. For more information about Laravel, please refer to the official Laravel website.
+
+Please read the license terms to learn more about the conditions for using this project.
 
 ## Support
 
