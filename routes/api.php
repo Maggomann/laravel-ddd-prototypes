@@ -1,7 +1,6 @@
 <?php
 
 use Business\Auth\Application\Routes\ApiUserRoutes;
-use Business\Example\Application\Routes\ExampleRoutes;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +14,3 @@ use Business\Example\Application\Routes\ExampleRoutes;
 */
 
 ApiUserRoutes::register();
-ExampleRoutes::register();

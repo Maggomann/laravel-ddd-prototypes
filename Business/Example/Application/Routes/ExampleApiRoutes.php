@@ -10,7 +10,7 @@ use Business\Example\Application\Controllers\ViewExampleListController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
-class ExampleRoutes implements RouteGroup
+class ExampleApiRoutes implements RouteGroup
 {
     public static function register(): Router
     {
