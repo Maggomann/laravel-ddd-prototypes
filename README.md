@@ -18,33 +18,43 @@ Please note that this project is still in the development phase. It serves as an
 
 ```plaintext
 - Business
-  - Domainname
-    - Domain
-      - Actions
-      - Builders
-      - DataTransferObjects
-      - Enums
-      - Events
-      - Exceptions
-      - Filters
-      - Jobs
-      - Listeners
-      - Mails
-      - Models
-      - Notifications
-      - Observers
-      - Policies
-      - Providers
-      - Services
-      - States
-      - Traits
-      - ViewModels
-    - Application
-      - Controllers
-      - Queries
-      - Requests
-      - Resources
-      - Routes
+    - Domainname
+        - Shared
+            - Domain
+            - Application
+        - Subdomainname1
+            - Domain
+            - Application
+        - Subdomainname2
+            - Domain
+            - Application
+
+- Domain
+    - Actions
+    - Builders
+    - DataTransferObjects
+    - Enums
+    - Events
+    - Exceptions
+    - Filters
+    - Jobs
+    - Listeners
+    - Mails
+    - Models
+    - Notifications
+    - Observers
+    - Policies
+    - Providers
+    - Services
+    - States
+    - Traits
+    - ViewModels
+- Application
+    - Controllers
+    - Queries
+    - Requests
+    - Resources
+    - Routes
 ```
 
 ---
