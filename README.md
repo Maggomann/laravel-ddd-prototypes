@@ -14,7 +14,7 @@ Please note that this project is still in the development phase. It serves as an
 
 ```plaintext
 - Business
-    - Domainname
+    - Maindomain1
         - Shared
             - Application
             - docs
@@ -30,7 +30,7 @@ Please note that this project is still in the development phase. It serves as an
             - docs
             - Domain
             - README.md
-
+    - Maindomain2
 - Application
     - Controllers
     - Queries
